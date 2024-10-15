@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Amirhf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/fonts.css">
+
+    <meta name="twitter:title" content="amirhf">
+    <meta name="twitter:description" content="amirhf Official Website">
+    <meta name="twitter:creator" content="@amirhf">
+    <meta name="twitter:image" content="static/images/favicon.png">
+    <meta name="twitter:image:alt" content="amirhf Official Website">
+    <meta name="twitter:domain" content="amirhf.ir">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amirhf">
+    <meta property="og:description" content="amirhf Official Website">
+    <meta property="og:image" content="static/images/favicon.png">
+    <meta property="og:url" content="https://amirhf.ir/">
+    <meta property="og:site_name" content="AMIHRHF Official Website">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="shortcut icon" type="image/png" href="static/images/favicon.png">
+    <link rel="manifest" href="static/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/images/favicon.png">
+    <meta name="theme-color" content="#17BF63">
+</head>
+<body>
+
+<pre class="screen">
+<p class="prompt">
+<span class="system">amirhf@localhost</span>:<span class="path">~</span>$ sudo less /bin/amirhf</p>[sudo] password for amirhf:
+
+<pre class="ascii-art">
+    _                _        _       __ 
+   / \    _ __ ___  (_) _ __ | |__   / _|
+  / _ \  | '_ ` _ \ | || '__|| '_ \ | |_ 
+ / ___ \ | | | | | || || |   | | | ||  _|
+/_/   \_\|_| |_| |_||_||_|   |_| |_||_|  
+
+</pre>
+
+Full Name:              Amir Hossein <span class="h">Fallah</span>
+Alias:                  Amirhf <span class="h"></span>
+Uptime:                 <span id="uptime"></span>&nbsp;[Milliseconds]
+Timezone:               Asia/Tehran ~ FA [<span class="mr-robot">UTC</span> +03:30]
+Location:               35.7219° N, 51.3347° E, Tehran, Iran
+Job History:            
+                        * <span class="git-hash">9e6ef23</span> (<span class="git-head">HEAD -></span> <a class="git-link" href="#">ArvanCloud</a>) Software Engineer <span class="live">@</span> Computer and Network Security</div> <span class="mr-robot">-</span> <span class="live">2024/07</span> <span class="git-head">~</span> Persist
+                        * <span class="git-hash">9e6ef23</span> <a class="git-link" href="#">Nahira</a>) Software Engineer <span class="live">@</span> Digital Marketing Agency</div> <span class="mr-robot">-</span> <span>2023/08</span> <span>~</span> 2024/09
+                        * <span class="git-hash">095fb12</span> <a class="git-link" href="#">AdamBarfi</a> Software Engineer <span class="live">@</span> Digital Marketing Agency <span class="mr-robot">-</span> 2023/02 <span class="git-head">~</span> 2023/08
+                        * <span class="git-hash">c1fb2d1</span> <a class="git-link" href="#">Dinaweb</a> Software Engineer <span class="live">@</span> Software Development Company <span class="mr-robot">-</span> 2021/01 <span class="git-head">~</span> 2023/01
+
+                        Connections:            <a href="https://www.linkedin.com/in/amirhf1" target="_">LinkedIn</a>, <a href="https://github.com/Amirhf1" target="_">GitHub</a>, <a href="https://t.me/theamirhf/" target="_">Telegram</a>, <a href="mailto:amirhf12x@gmail.com" target="_">eMail</a>
+Languages:              PHP, python, Go
+Frameworks:             Laravel, FastApi, Django, FastAPI, Gin
+Tools & Technologies:   SQL, Docker, REST, Git, 
+GPG Fingerprint:        1594 FBAE 050C 9DB3 0AF7 F5C5 2702 9E4C 57B8 937D
+License                 Copyright ©<span id="this_year"></span> Amirhf <span class="h">H</span>.
+~
+~
+~
+<span class="eof">/bin/amirhf (END)</span>
+<p class="prompt"><span class="system">amirhf@localhost</span>:<span class="path">~</span>$ <span id="cursor" class="eof"> </span></p>
+
+<script>
+    jQuery.htmlPrefilter = function( html ) {
+	    return html;
+    };
+</script>
+
+<script>
+    var today = new Date()
+    // copyright year
+    document.getElementById("this_year").innerHTML = today.getFullYear();
+    // live uptime
+    function live_uptime() {
+        var today = new Date()
+        var birth_date = new Date("1998-04-14")
+        var age = today - birth_date
+        document.getElementById("uptime").innerHTML =  age;
+        setTimeout(live_uptime, 1000);
+    }
+    window.onload = live_uptime();
+
+    // cursor
+    var cursor = document.getElementById("cursor");
+    var cursor_on = true;
+    setInterval(function() {
+        cursor.style.display = cursor_on ? "none" : "inline";
+        cursor_on = !cursor_on;
+    }, 650);
+
+</script>
+
+</pre>
+</body>
+</html>
