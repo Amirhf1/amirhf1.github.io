@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributions - AmirHosein Fallah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --border: #e5e7eb;
+      --bg-secondary: #f9fafb;
+      --merged: #8250df;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-tertiary: #6b7280;
+        --border: #1f2937;
+        --bg-secondary: #111827;
+        --merged: #a371f7;
+      }
+      body { background: #0d1117; }
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); min-height: 100vh; }
+    .page { max-width: 660px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .emoji { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    h1 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+    .sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; }
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    /* Project tabs */
+    .project-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .project-tab {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-weight: 500; font-family: 'Inter', sans-serif;
+      color: var(--text-tertiary);
+      background: none; border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 10px;
+      cursor: pointer; transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .project-tab:hover { color: var(--text-secondary); border-color: var(--text-tertiary); }
+    .project-tab.active { color: var(--text-primary); border-color: var(--merged); background: var(--bg-secondary); }
+    .project-tab .tab-count {
+      font-size: 11px; font-weight: 400;
+      background: var(--bg-secondary);
+      color: var(--text-tertiary);
+      padding: 1px 6px; border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .project-tab.active .tab-count { color: var(--merged); border-color: var(--merged); background: transparent; }
+
+    /* PR list */
+    .pr-list { display: flex; flex-direction: column; }
+    .pr-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 8px; border-radius: 6px; text-decoration: none; color: inherit; transition: background 0.1s; }
+    .pr-row:hover { background: var(--bg-secondary); }
+    .pr-icon { margin-top: 3px; flex-shrink: 0; color: var(--merged); }
+    .pr-body { flex: 1; min-width: 0; }
+    .pr-title { font-size: 14px; color: var(--text-primary); line-height: 1.4; }
+    .pr-meta { font-size: 12px; color: var(--text-tertiary); margin-top: 3px; }
+    .pr-branch { font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--bg-secondary); color: var(--text-tertiary); border: 1px solid var(--border); flex-shrink: 0; margin-top: 3px; white-space: nowrap; }
+    .skeleton { height: 14px; border-radius: 4px; background: var(--bg-secondary); animation: pulse 1.2s infinite; margin-bottom: 6px; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .error { font-size: 14px; color: var(--text-tertiary); padding: 1rem 0; }
+
+    /* Header */
+    .header { border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 10; }
+    @media (prefers-color-scheme: dark) { .header { background: #0d1117; } }
+    .header-inner { max-width: 660px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-brand { font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none; padding: 14px 0; }
+    .header-tabs { display: flex; }
+    .header-tab { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: var(--text-tertiary); text-decoration: none; padding: 14px 14px; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; }
+    .header-tab:hover { color: var(--text-primary); }
+    .header-tab.active { color: var(--text-primary); border-bottom-color: #2563eb; }
+    @media (prefers-color-scheme: dark) { .header-tab.active { border-bottom-color: #60a5fa; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="header-brand" href="../">AmirHosein Fallah</a>
+      <nav class="header-tabs">
+        <a class="header-tab" href="../">About</a>
+        <a class="header-tab active" href="./">Contributions</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <span class="emoji">🔀</span>
+    <h1>Open Source Contributions</h1>
+    <div class="sub">Merged pull requests - updated automatically.</div>
+
+    <div class="divider"></div>
+
+    <div class="project-tabs" id="project-tabs"></div>
+
+    <div class="pr-list" id="pr-list">
+      <div class="pr-row"><div style="flex:1"><div class="skeleton" style="width:75%"></div><div class="skeleton" style="width:35%"></div></div></div>
+      <div class="pr-row"><div style="flex:1"><div class="skeleton" style="width:60%"></div><div class="skeleton" style="width:30%"></div></div></div>
+      <div class="pr-row"><div style="flex:1"><div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:40%"></div></div></div>
+    </div>
+  </div>
+
+  <script>
+    const PROJECTS = [
+      { repo: 'laravel/framework', label: 'laravel/framework' },
+      { repo: 'gofiber/fiber',     label: 'gofiber/fiber' },
+      { repo: 'caddyserver/caddy', label: 'caddyserver/caddy' },
+    ];
+
+    const cache = {};
+    let active = 0;
+
+    const timeAgo = (d) => {
+      const diff = Date.now() - new Date(d).getTime();
+      const days = Math.floor(diff / 86400000);
+      const w = Math.floor(days / 7);
+      const mo = Math.floor(days / 30);
+      if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+      if (days < 7) return days + 'd ago';
+      if (w < 5) return w + 'w ago';
+      return mo + 'mo ago';
+    };
+
+    const branch = (title) => {
+      const m = title.match(/\[(\d+\.x|master|main)\]/);
+      return m ? m[1] : null;
+    };
+
+    const cleanTitle = (title) =>
+      title.replace(/^\[\d+\.x\]\s*/, '').replace(/^\[(master|main)\]\s*/, '');
+
+    const prIcon = `<svg class="pr-icon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354Z"/>
+    </svg>`;
+
+    function renderTabs() {
+      document.getElementById('project-tabs').innerHTML = PROJECTS.map((p, i) => `
+        <button class="project-tab${i === active ? ' active' : ''}" onclick="switchTab(${i})" data-index="${i}">
+          ${p.label}
+          <span class="tab-count" id="tab-count-${i}">${cache[p.repo] ? cache[p.repo].length : '…'}</span>
+        </button>
+      `).join('');
+    }
+
+    function renderSkeleton() {
+      document.getElementById('pr-list').innerHTML = [75, 60, 80].map(w => `
+        <div class="pr-row"><div style="flex:1"><div class="skeleton" style="width:${w}%"></div><div class="skeleton" style="width:35%"></div></div></div>
+      `).join('');
+    }
+
+    function renderPRs(items) {
+      if (!items.length) {
+        document.getElementById('pr-list').innerHTML = '<div class="error">No merged PRs found.</div>';
+        return;
+      }
+      document.getElementById('pr-list').innerHTML = items.map(pr => {
+        const b = branch(pr.title);
+        return `
+          <a class="pr-row" href="${pr.html_url}" target="_blank">
+            ${prIcon}
+            <div class="pr-body">
+              <div class="pr-title">${cleanTitle(pr.title)}</div>
+              <div class="pr-meta">#${pr.number} · ${timeAgo(pr.closed_at || pr.updated_at)}</div>
+            </div>
+            ${b ? `<span class="pr-branch">${b}</span>` : ''}
+          </a>
+        `;
+      }).join('');
+    }
+
+    async function fetchPRs(repo) {
+      if (cache[repo]) return cache[repo];
+      const res = await fetch(`https://api.github.com/search/issues?q=author:Amirhf1+repo:${repo}+is:pr+is:merged&sort=updated&per_page=50`);
+      const data = await res.json();
+      cache[repo] = data.items || [];
+      return cache[repo];
+    }
+
+    async function switchTab(index) {
+      active = index;
+      renderTabs();
+      const repo = PROJECTS[index].repo;
+      if (!cache[repo]) renderSkeleton();
+      try {
+        const items = await fetchPRs(repo);
+        renderPRs(items);
+        renderTabs(); // update count after fetch
+      } catch(e) {
+        document.getElementById('pr-list').innerHTML = '<div class="error">Could not load - GitHub API rate limit or network issue.</div>';
+      }
+    }
+
+    // init
+    renderTabs();
+    switchTab(0);
+
+    // prefetch other tabs in background
+    setTimeout(() => {
+      PROJECTS.forEach((p, i) => { if (i !== 0) fetchPRs(p.repo).then(() => renderTabs()).catch(() => {}); });
+    }, 1000);
+  </script>
+</body>
+</html>

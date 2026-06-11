@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AmirHosein Fallah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --text-primary: #1a1a1a;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --border: #e5e7eb;
+      --bg-secondary: #f9fafb;
+      --blue: #2563eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-tertiary: #6b7280;
+        --border: #1f2937;
+        --bg-secondary: #111827;
+        --blue: #60a5fa;
+      }
+      body { background: #0d1117; }
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text-primary); min-height: 100vh; }
+    .page { max-width: 660px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .emoji { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    h1 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+    .role { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.75rem; }
+    .bio { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; max-width: 520px; }
+    .label { font-size: 11px; font-weight: 600; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .props { display: flex; flex-direction: column; margin-bottom: 2rem; }
+    .prop { display: flex; align-items: flex-start; gap: 0; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .prop:last-child { border-bottom: none; }
+    .prop-key { color: var(--text-tertiary); min-width: 140px; font-size: 13px; flex-shrink: 0; }
+    .prop-val { color: var(--text-primary); }
+    .prop-val a { color: var(--blue); text-decoration: none; }
+    .prop-val a:hover { text-decoration: underline; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag { font-size: 12px; padding: 2px 8px; border-radius: 4px; background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border); }
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    /* Impact cards */
+    .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 2rem; }
+    .impact-card { padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-secondary); }
+    .impact-value { font-size: 18px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; line-height: 1.2; }
+    .impact-label { font-size: 11px; color: var(--text-tertiary); margin-top: 3px; line-height: 1.4; }
+
+    /* Header tabs nav */
+    .header { border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 10; }
+    @media (prefers-color-scheme: dark) { .header { background: #0d1117; } }
+    .header-inner { max-width: 660px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .header-brand { font-size: 13px; font-weight: 600; color: var(--text-primary); text-decoration: none; padding: 14px 0; }
+    .header-tabs { display: flex; }
+    .header-tab {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      padding: 14px 14px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .header-tab:hover { color: var(--text-primary); }
+    .header-tab.active { color: var(--text-primary); border-bottom-color: var(--blue); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="header-brand" href="./">AmirHosein Fallah</a>
+      <nav class="header-tabs">
+        <a class="header-tab active" href="./">About</a>
+        <a class="header-tab" href="./contributes/">Contributions</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+    <span class="emoji">👨🏻‍💻</span>
+    <h1>AmirHosein Fallah</h1>
+    <div class="role">Senior Backend Engineer</div>
+    <p class="bio">
+      Senior backend engineer with 5+ years of experience building high-scale systems in PHP/Laravel and Go. Currently focused on AI-powered infrastructure at ArvanCloud,  designing RAG pipelines, LLM orchestration layers, and production AI systems that handle thousands of requests daily. I contribute actively to open-source projects, including the Laravel core framework and Caddy Server.
+    </p>
+
+    <div class="label">About</div>
+    <div class="props">
+      <div class="prop">
+        <span class="prop-key">🏢 &nbsp;Company</span>
+        <span class="prop-val">ArvanCloud</span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">📍 &nbsp;Location</span>
+        <span class="prop-val">Tehran, Iran</span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">✉️ &nbsp;Email</span>
+        <span class="prop-val"><a href="mailto:amirhf12x@gmail.com">amirhf12x@gmail.com</a></span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">🐙 &nbsp;GitHub</span>
+        <span class="prop-val"><a href="https://github.com/Amirhf1" target="_blank">github.com/Amirhf1</a></span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">💼 &nbsp;LinkedIn</span>
+        <span class="prop-val"><a href="https://linkedin.com/in/amirhf1" target="_blank">linkedin.com/in/amirhf1</a></span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">🔗 &nbsp;Website</span>
+        <span class="prop-val"><a href="https://isbash.com" target="_blank">isbash.com</a></span>
+      </div>
+      <div class="prop">
+        <span class="prop-key">🛠 &nbsp;Stack</span>
+        <span class="prop-val">
+          <div class="tags">
+            <span class="tag">PHP</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Go</span>
+            <span class="tag">Python</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">LLM Orchestration</span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
